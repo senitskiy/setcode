@@ -1,0 +1,78 @@
+{
+	"ABI version": 2,
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "testSend0",
+			"inputs": [
+				{"name":"addr","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "testSend1",
+			"inputs": [
+				{"name":"addr","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "testSend128",
+			"inputs": [
+				{"name":"addr","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "testSend160",
+			"inputs": [
+				{"name":"addr","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "testValue0Flag64",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "testValue1Flag64",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "testValue1Flag65",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "testFlag2",
+			"inputs": [
+				{"name":"addr","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	]
+}
