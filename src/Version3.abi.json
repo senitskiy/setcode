@@ -1,0 +1,41 @@
+{
+	"ABI version": 2,
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "setCode",
+			"inputs": [
+				{"name":"newcode","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "version",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"version","type":"uint256"}
+			]
+		},
+		{
+			"name": "value25",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value25","type":"uint256"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	]
+}

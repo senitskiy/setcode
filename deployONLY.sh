@@ -16,12 +16,15 @@ echo Tonos-cli:                  $TONOS_CLI
 echo Directory Address and keys: $CURRENT_DIR
 
 
-# ./1_deploy_bomber.sh
-# ./2_deploy_sink.sh
-./3_transaction.sh
+./1_deploy_Contract.sh
+# ./3_1_setcode_Version2.sh
+# ./3_2_setcode_Version3.sh
+# ./4_1_onCodeUpgrade.sh
+# ./4_2_onCodeUpgrade.sh
+# ./5_value.sh
 
 
-
+# ./2_deploy_NewVersion.sh
 # ./deploy/3_RootBTC.sh
 # ./deploy/4_RootETH.sh
 # ./deploy/5_RootUSDT.sh
