@@ -7,7 +7,7 @@ TONOS_CLI=$(./configes/get_tonos_cli.sh)
 CURRENT_DIR=$(./configes/get_current_dir.sh)
 
 echo ==========================================================================
-CODE=$($TVM_LINKER decode --tvc ./src/Version4.tvc  | grep code: | cut -c 8-)
+CODE=$($TVM_LINKER decode --tvc ./src/Version3.tvc  | grep code: | cut -c 8-)
 
 # echo $CODE
 ADDR_FILE="./Contract/address.json"
@@ -51,7 +51,7 @@ ROOT_DATA='{"newcode":"'$CODE'"}'
 
 # RESULT_DEPLOY=$(
     # $TONOS_CLI -u $NETWORK call $ADDR setCode $ROOT_DATA --abi ./src/NewVersion.abi.json --sign ./BadContract/deploy.keys.json #| grep "Succeeded" #| # cut -c 12-) 
-    $TONOS_CLI -u $NETWORK call $ADDR setCode $ROOT_DATA --abi ./src/Version3.abi.json --sign ./Contract/deploy.keys.json #| grep "Succeeded" #| # cut -c 1-) 
+    $TONOS_CLI -u $NETWORK call $ADDR setCode $ROOT_DATA --abi ./src/Version2.abi.json --sign ./Contract/deploy.keys.json #| grep "Succeeded" #| # cut -c 1-) 
 
 # $TONOS_CLI -u $NETWORK run $ADDR value3 {} --abi ./src/Version3.abi.json | awk '/Result: {/,/}/'
 
@@ -59,3 +59,13 @@ ROOT_DATA='{"newcode":"'$CODE'"}'
 
 # ACCOUNT_STATUS=$($TONOS_CLI -u $NETWORK account $ADDR | grep "acc_type:" | cut -c 10-)
 # echo Status account: $ACCOUNT_STATUS
+
+# $TONOS_CLI -u $NETWORK run $ADDR version {} --abi ./src/Version1.abi.json | awk '/Result: {/,/}/'
+
+$TONOS_CLI -u $NETWORK run $ADDR version {} --abi ./src/Version3.abi.json | awk '/Result: {/,/}/'
+$TONOS_CLI -u $NETWORK run $ADDR value50 {} --abi ./src/Version3.abi.json | awk '/Result: {/,/}/'
+
+$TONOS_CLI -u $NETWORK run $ADDR version {} --abi ./src/Version2.abi.json | awk '/Result: {/,/}/'
+$TONOS_CLI -u $NETWORK run $ADDR value00 {} --abi ./src/Version2.abi.json | awk '/Result: {/,/}/'
+$TONOS_CLI -u $NETWORK run $ADDR value11 {} --abi ./src/Version2.abi.json | awk '/Result: {/,/}/'
+$TONOS_CLI -u $NETWORK run $ADDR value22 {} --abi ./src/Version2.abi.json | awk '/Result: {/,/}/'

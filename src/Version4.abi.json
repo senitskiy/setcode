@@ -1,5 +1,6 @@
 {
 	"ABI version": 2,
+	"version": "2.1",
 	"header": ["time", "expire"],
 	"functions": [
 		{
@@ -53,5 +54,14 @@
 	"data": [
 	],
 	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"version1","type":"uint256"},
+		{"name":"value00","type":"uint256"},
+		{"name":"value11","type":"uint256"},
+		{"name":"value22","type":"uint256"}
 	]
 }

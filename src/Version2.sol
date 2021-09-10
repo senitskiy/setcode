@@ -4,9 +4,11 @@ pragma AbiHeader expire;
 contract GoodContract {
 	// Version of the contract
 	uint public version; // this value is set in 'onCodeUpgrade' function
+	uint public value;
 	uint public value00;
 	uint public value11;
 	uint public value22;
+	// uint public value;
 
 	// constructor is not needed. It won't be called.
 	// constructor() public {}
@@ -26,6 +28,7 @@ contract GoodContract {
 	function setCode(TvmCell newcode) public checkPubkeyAndAccept {
 		// Runtime function that creates an output action that would change this
 		// smart contract code to that given by cell newcode.
+		value = 3;
 		tvm.setcode(newcode);
 		// Runtime function that replaces current code of the contract with newcode.
 		tvm.setCurrentCode(newcode);
@@ -37,5 +40,7 @@ contract GoodContract {
 	// We can add them into this function with constant id.
 	function onCodeUpgrade() private {
 		version = 2;
+		
+		tvm.resetStorage();
 	}
 }

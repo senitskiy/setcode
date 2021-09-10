@@ -5,7 +5,7 @@ contract ContractWithBug {
 	// Version of the contract
 	uint public version = 1;
 	uint public value = 10;
-	uint public value1 = 557;
+	uint public value1 = 3;
 	uint public value2 = 8;
 
 	constructor() public {
@@ -28,7 +28,7 @@ contract ContractWithBug {
 	}
 
 	// Function that changes the code of current contract.
-	function setCode(TvmCell newcode) public pure checkPubkeyAndAccept {
+	function setCode(TvmCell newcode) public checkPubkeyAndAccept {
 		// Runtime function that creates an output action that would change this
 		// smart contract code to that given by cell newcode.
 		tvm.setcode(newcode);

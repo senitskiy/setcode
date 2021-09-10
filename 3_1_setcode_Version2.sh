@@ -23,7 +23,10 @@ echo $ADDR
 # PUBKEY=$(cat $KEYS_FILE | grep public | cut -c 14-77)
 # ROOT_OWNER_PK=$PUBKEY
 
-
+# $TONOS_CLI -u $NETWORK run $ADDR version {} --abi ./src/Version1.abi.json | awk '/Result: {/,/}/'
+# $TONOS_CLI -u $NETWORK run $ADDR value {} --abi ./src/Version1.abi.json | awk '/Result: {/,/}/'
+# $TONOS_CLI -u $NETWORK run $ADDR value1 {} --abi ./src/Version1.abi.json | awk '/Result: {/,/}/'
+# $TONOS_CLI -u $NETWORK run $ADDR value2 {} --abi ./src/Version1.abi.json | awk '/Result: {/,/}/'
 
 # echo Waiting. Transaction from Giver...
 
@@ -58,3 +61,16 @@ ROOT_DATA='{"newcode":"'$CODE'"}'
 
 ACCOUNT_STATUS=$($TONOS_CLI -u $NETWORK account $ADDR | grep "acc_type:" | cut -c 10-)
 echo Status account: $ACCOUNT_STATUS
+
+# $TONOS_CLI -u $NETWORK run $ADDR version {} --abi ./src/Version3.abi.json | awk '/Result: {/,/}/'
+# $TONOS_CLI -u $NETWORK run $ADDR value50 {} --abi ./src/Version2.abi.json | awk '/Result: {/,/}/'
+
+$TONOS_CLI -u $NETWORK run $ADDR version {} --abi ./src/Version2.abi.json | awk '/Result: {/,/}/'
+$TONOS_CLI -u $NETWORK run $ADDR value00 {} --abi ./src/Version2.abi.json | awk '/Result: {/,/}/'
+$TONOS_CLI -u $NETWORK run $ADDR value11 {} --abi ./src/Version2.abi.json | awk '/Result: {/,/}/'
+$TONOS_CLI -u $NETWORK run $ADDR value22 {} --abi ./src/Version2.abi.json | awk '/Result: {/,/}/'
+
+# $TONOS_CLI -u $NETWORK run $ROOT_ADDR version {} --abi ./src/Version1.abi.json | awk '/Result: {/,/}/'
+$TONOS_CLI -u $NETWORK run $ADDR value {} --abi ./src/Version1.abi.json | awk '/Result: {/,/}/'
+$TONOS_CLI -u $NETWORK run $ADDR value1 {} --abi ./src/Version1.abi.json | awk '/Result: {/,/}/'
+$TONOS_CLI -u $NETWORK run $ADDR value2 {} --abi ./src/Version1.abi.json | awk '/Result: {/,/}/'

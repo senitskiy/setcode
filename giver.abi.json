@@ -5,7 +5,8 @@
 		{
 			"name": "pay",
 			"inputs": [
-				{"name":"addr","type":"address"}
+				{"name":"addr","type":"address"},
+				{"name":"count","type":"uint128"}
 			],
 			"outputs": [
 			]

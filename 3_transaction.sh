@@ -161,7 +161,8 @@ then
     GIVER_RESULT=$($TONOS_CLI -u $NETWORK call 0:841288ed3b55d9cdafa806807f02a0ae0c169aa5edfe88a789a6482429756a94 sendGrams "{\"dest\":\"$BOMBER_ADDR\",\"amount\":\"100000000000\"}" --abi ./local_giver.abi.json | grep "Succeeded" | cut -c 1-)
 elif [ $NETWORK = "https://net.ton.dev" ]
 then
-    GIVER_RESULT=$($TONOS_CLI -u $NETWORK call 0:2225d70ebde618b9c1e3650e603d6748ee6495854e7512dfc9c287349b4dc988 pay '{"addr":"'$BOMBER_ADDR'"}' --abi ./giver.abi.json  | grep "Succeeded" | cut -c 1-)
+    # GIVER_RESULT=$($TONOS_CLI -u $NETWORK call 0:ed069a52b79f0bc21d13da9762a591e957ade1890d4a1c355e0010a8cb291ae4 pay '{"addr":"'$BOMBER_ADDR'"}' --abi ./giver.abi.json  | grep "Succeeded" | cut -c 1-)
+    GIVER_RESULT=$($TONOS_CLI -u $NETWORK call 0:ed069a52b79f0bc21d13da9762a591e957ade1890d4a1c355e0010a8cb291ae4 pay '{"addr":"'$BOMBER_ADDR'","count":"'111000000000'"}' --abi ./giver.abi.json  | grep "Succeeded" | cut -c 1-)
     # timeout 5
 fi
 

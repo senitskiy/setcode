@@ -42,7 +42,7 @@ echo address: $ADDR
 
 # echo Status Deploy: $RESULT_DEPLOY
 
-ROOT_DATA='{"newcode":"'$CODE'"}'
+# ROOT_DATA='{"newcode":"'$CODE'"}'
 
 
 # GETWRAPPEDTONROOT=$(
@@ -54,15 +54,18 @@ ROOT_DATA='{"newcode":"'$CODE'"}'
     # $TONOS_CLI -u $NETWORK call $ADDR version {} --abi ./src/NewVersion.abi.json --sign ./BadContract/deploy.keys.json #| grep "Transaction" | cut -c 12-) 
 
 
-$TONOS_CLI -u $NETWORK run $ADDR version {} --abi ./src/Version2.abi.json | awk '/Result: {/,/}/'
+$TONOS_CLI -u $NETWORK run $ADDR version {} --abi ./src/Version1.abi.json | awk '/Result: {/,/}/'
 
 $TONOS_CLI -u $NETWORK run $ADDR value00 {} --abi ./src/Version2.abi.json | awk '/Result: {/,/}/'
-
-# $TONOS_CLI -u $NETWORK run $ADDR value25 {} --abi ./src/Version3.abi.json #| awk '/Result: {/,/}/'
 
 $TONOS_CLI -u $NETWORK run $ADDR value11 {} --abi ./src/Version2.abi.json | awk '/Result: {/,/}/'
 
 $TONOS_CLI -u $NETWORK run $ADDR value22 {} --abi ./src/Version2.abi.json | awk '/Result: {/,/}/'
+
+
+$TONOS_CLI -u $NETWORK run $ADDR value50 {} --abi ./src/Version3.abi.json | awk '/Result: {/,/}/'
+
+$TONOS_CLI -u $NETWORK run $ADDR value {} --abi ./src/Version3.abi.json | awk '/Result: {/,/}/'
 
 ACCOUNT_STATUS=$($TONOS_CLI -u $NETWORK account $ADDR | grep "acc_type:" | cut -c 10-)
 echo Status account: $ACCOUNT_STATUS

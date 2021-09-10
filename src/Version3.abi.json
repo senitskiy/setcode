@@ -1,5 +1,6 @@
 {
 	"ABI version": 2,
+	"version": "2.1",
 	"header": ["time", "expire"],
 	"functions": [
 		{
@@ -26,16 +27,32 @@
 			]
 		},
 		{
-			"name": "value25",
+			"name": "value",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"value25","type":"uint256"}
+				{"name":"value","type":"uint256"}
+			]
+		},
+		{
+			"name": "value50",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value50","type":"uint256"}
 			]
 		}
 	],
 	"data": [
 	],
 	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"version","type":"uint256"},
+		{"name":"value","type":"uint256"},
+		{"name":"value50","type":"uint256"}
 	]
 }

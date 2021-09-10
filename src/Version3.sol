@@ -4,10 +4,12 @@ pragma AbiHeader expire;
 contract GoodContract {
 	// Version of the contract
 	uint public version; // this value is set in 'onCodeUpgrade' function
-	uint public value25;
+	uint public value;
+	// uint public value25;
 	// uint public value30;
 	// uint public value40;
-	// uint public value50;
+	uint public value50 = 4;
+	// uint public value;
 
 	// constructor is not needed. It won't be called.
 	// constructor() public {}
@@ -37,6 +39,8 @@ contract GoodContract {
 	// After code upgrade caused by calling setCode function we may need to do some actions.
 	// We can add them into this function with constant id.
 	function onCodeUpgrade() private {
+		
+		tvm.resetStorage();
 		version = 3;
-	}
+	}	
 }
